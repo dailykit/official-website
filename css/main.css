@@ -192,12 +192,14 @@ body, html {
 
 .meal-kit {
     display: flex;
+    align-items: center;
 }
 
 .meal-kit .left {
-    padding: 100px;
+    padding: 50px;
     font-size: 1.2rem;
     color: #32325D;
+    width: 50%;
 }
 
 .meal-kit .left > div:nth-child(1) {
@@ -219,4 +221,95 @@ body, html {
 .meal-kit .left .btn-theme {
     padding: 8px 24px;
     text-transform: uppercase;
+}
+
+.meal-kit .right {
+    width: 50%;
+    padding: 80px;
+}
+
+.meal-kit .right img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 991px) {
+    .meal-kit .left > div:nth-child(1) {
+        font-size: 3rem;
+    }
+
+    .meal-kit .left > div:nth-child(2) {
+        font-size: 2rem;
+    }
+
+    .meal-kit .right {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .meal-kit {
+        flex-direction: column;
+    }
+
+    .meal-kit .left, .meal-kit .right {
+        width: 100%;
+        padding: 0px;        
+    }
+
+    .meal-kit .right {
+        margin-top: 50px;
+    }
+
+}
+
+/* Delivery */
+
+.delivery {
+    display: flex;
+    align-items: center;
+}
+
+.delivery .left {
+    padding: 50px;
+    width: 50%;
+}
+
+.delivery .left > div:nth-child(1) {
+    color: #32325D;
+    line-height: 2rem;
+    font-size: 2rem;
+}
+
+.delivery .left > div:nth-child(2) {
+    color: #32325D;
+    font-size: 2.2rem;
+    line-height: 4rem;
+    font-weight: 900;
+}
+
+.delivery .left .points .accordion {
+    background: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8AC03B;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.delivery .left .points .panel {
+    padding: 0 18px;
+    background-color: white;
+    color: #32325D;
+    padding-left: 50px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.2s ease-out;
 }
