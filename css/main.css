@@ -313,3 +313,43 @@ body, html {
     max-height: 0;
     transition: 0.2s ease-out;
 }
+
+/* Horizontal Section */
+
+.horizontal {
+    background: url('../img/kitchen.png') no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.horizontal .content {
+    width: 50%;
+    padding: 0 50px;
+}
+
+.horizontal .content > div:nth-child(1) {
+    color: #32325D;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.horizontal .content > div:nth-child(2) {
+    color: #5C5C7E;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.horizontal .content .focus {
+    background: #8AC03B;
+    padding: 30px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;        
+}
+
+.horizontal .content .focus > div {
+    padding-left: 30px;
+    border-left: 7px solid #F9C80A;
+}
