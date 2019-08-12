@@ -28,6 +28,27 @@ body, html {
     color: #fff;
 }
 
+/* Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #8AC03B; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #22802B; 
+}
+
 /* Navbar */
 
 .navbar {
@@ -353,3 +374,171 @@ body, html {
     padding-left: 30px;
     border-left: 7px solid #F9C80A;
 }
+
+/* Helping */
+
+.helping .heading{
+    text-align: center;
+    font-size: 3rem;
+    color: #32325D;
+    font-weight: 900;
+}
+
+.flex-box {
+    display: flex;
+    margin-top: 50px;
+}
+
+.flex-box .box {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    transition: .5s ease;
+    position: relative;
+}
+
+.flex-box .box .circle {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #32325D;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+.flex-box .box .heading {
+    color: #32325D;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.flex-box .box:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.flex-box .box .reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    padding: 60px;
+    overflow: hidden;
+}
+
+.flex-box .box .reveal .circle {
+    height: 80px;
+    width: 80px;
+    border: none;
+    background: #22802B;
+}
+
+.flex-box .box .reveal .heading {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: left;
+}
+
+.flex-box .box .reveal .info-text {
+    color: #fff;
+    font-weight: 500;
+}
+
+.flex-box .box .reveal .btn-reveal {
+    background: #22802B;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.flex-box .box .reveal .info-dots {
+    height: 50px;
+    width: 50px;
+    border: 3px dashed #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease-in-out;
+}
+
+.flex-box .box .reveal .info-dots .fill-dot {
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.flex-box .box .reveal .dot-1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.flex-box .box .reveal .dot-2 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.flex-box .box .reveal .info-dots .hover-info {
+    display: none;
+    position: absolute;
+    background: #fff;
+    transition: 1s ease-in-out;
+    padding: 10px;
+    color: #32325D;
+    border-radius: 5px;
+    max-width: 200px;
+}
+
+.flex-box .box .reveal .info-dots:hover {
+    height: 60px;
+    width: 60px;
+}
+
+.flex-box .box .reveal .dot-2:hover .hover-info {
+    bottom: -100px;
+    left: -150px;
+    display: block;
+    transform-origin: top right;
+}
+
+.flex-box .box .reveal .dot-1:hover .hover-info {
+    bottom: -50px;
+    display: block;
+    left: 50px;
+}
+
+.flex-box .box:nth-child(1) .reveal {
+    background: url('../img/helping-cafe.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.flex-box .box:nth-child(2) .reveal {
+    background: url('../img/helping-dining.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.flex-box .box:nth-child(3) .reveal {
+    background: url('../img/helping-cloud.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.flex-box .box:nth-child(4) .reveal {
+    background: url('../img/helping-bakery.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.flex-box .box:hover {
+    flex: 3;
+}
+
+.flex-box .box:hover .reveal {
+    opacity: 1;
+}
+
