@@ -11,7 +11,7 @@ body, html {
 }
 
 .full-screen {
-    height: 100vh;
+    min-height: 100vh;
     padding: 100px 60px;
 }
 
@@ -26,6 +26,24 @@ body, html {
 .btn-theme:hover {
     transform: scale(1.1);
     color: #fff;
+}
+
+.show-on-mobile-only {
+    display: none;
+}
+
+.hide-on-mobile-only {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .show-on-mobile-only {
+        display: block;
+    }
+
+    .hide-on-mobile-only {
+        display: none;
+    }
 }
 
 /* Scroll Bar */
@@ -335,6 +353,57 @@ body, html {
     transition: 0.2s ease-out;
 }
 
+.delivery .right {
+    width: 50%;
+    padding: 80px;
+}
+
+.delivery .right img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .delivery {
+        flex-direction: column;
+    }
+
+    .delivery .left, .delivery .right {
+        width: 100%;
+        padding: 0px;        
+    }
+
+    .delivery .left {
+        order: 1;
+    }
+
+    .delivery .left > div:nth-child(1) {
+        font-size: 1.2rem;
+    }
+
+    .delivery .left > div:nth-child(2) {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    .delivery .left .points .accordion{
+        font-size: 1.1rem;
+    }
+
+    .delivery .right {
+        margin-bottom: 50px;
+        order: 0;
+    }
+
+    .delivery .left .points .panel {
+        padding: 0px 18px;
+        font-size: 1rem;
+    }
+
+}
+
+
 /* Horizontal Section */
 
 .horizontal {
@@ -373,6 +442,12 @@ body, html {
 .horizontal .content .focus > div {
     padding-left: 30px;
     border-left: 7px solid #F9C80A;
+}
+
+@media only screen and (max-width: 768px) {
+    .horizontal .content {
+        display: none;
+    }
 }
 
 /* Helping */
@@ -540,5 +615,52 @@ body, html {
 
 .flex-box .box:hover .reveal {
     opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .helping {
+        padding: 0;
+    }
+
+    .helping .action {
+        display: flex;
+        justify-content: center;
+    }
+
+    .helping .heading {
+        font-size: 2rem;
+    }
+
+    .flex-box {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .flex-box .box:not(:last-child) {
+        border-right: none;
+    }
+    
+    .flex-box .box .reveal {
+        opacity: 1;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .flex-box .box .reveal .circle, .flex-box .box .reveal .info-dots {
+        display: none;
+    }
+
+    .flex-box .box .reveal .heading { 
+        font-size: 2rem;
+    }
+
+    .flex-box .box .reveal .info-text {
+        font-size: 1.2rem;
+    }
+
+    .helping .action .btn-reveal {
+        font-size: 1.2rem;
+    }
 }
 
