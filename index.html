@@ -8,11 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Chivo:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -69,18 +66,20 @@
         </div>
       </nav>
 
+      <div id="fullpage">
       <!-- Landing Section -->
-      <section class="full-screen landing">
+      <section class="section full-screen landing">
         <div class="content">
             <span class="focus">
                 According to <span>NRA survey</span>
             </span>
              <div class="stats">
-                <div class="circle">
-                    <div class="inner-circle">
-                            49%
-                    </div>
-                </div>
+                 <img src="img/progress.png" alt="Progress">
+                <!-- <div class="circle">
+                    <div class="inner-circle"> -->
+                        <span id="percentage">49%</span>
+                    <!-- </div>
+                </div> -->
              </div>
              of consumers say they want to purchase meal kits from their favorite restaurant. <br/>
              <button class="btn btn-theme"> Know more </button>
@@ -88,7 +87,7 @@
       </section>
 
       <!-- Meal Kit -->
-      <section class="full-screen meal-kit">
+      <section class="section full-screen meal-kit">
         <div class="left"> 
             What the hell is
             <div>
@@ -103,14 +102,28 @@
             </div>
             <button class="btn btn-theme">Learn More</button>
         </div>
-        <div class="right">
-            <img class="" src="img/meal-kit.png" alt="Meal Kit">
+        <div class="right" id="meal-kit-anim">
+            <img id="meat" src="img/anims/meat.png" alt="Meat">
+            <img id="bag" src="img/anims/bag.png" alt="Bag">
+            <img id="bottle-1" src="img/anims/bottle-1.png" alt="Bottle">
+            <img id="bottle-2" src="img/anims/bottle-2.png" alt="Bottle">
+            <img id="bro-1" src="img/anims/bro-1.png" alt="Broccoli">
+            <img id="bro-2" src="img/anims/bro-2.png" alt="Broccoli">
+            <img id="carrot-1" src="img/anims/carrot-1.png" alt="Carrot">
+            <img id="chilli-1" src="img/anims/chilli-1.png" alt="Chilli">
+            <img id="chilli-2" src="img/anims/chilli-2.png" alt="Chilli">
+            <img id="mush-1" src="img/anims/mush-1.png" alt="Mushroom">
+            <img id="mush-2" src="img/anims/mush-2.png" alt="Mushroom">
+            <img id="mush-3" src="img/anims/mush-2.png" alt="Mushroom">
+            <img id="tomato-1" src="img/anims/tomato-1.png" alt="Tomato">
+            <img id="tomato-2" src="img/anims/tomato-1.png" alt="Tomato">
+            <img id="fish" src="img/anims/fish.png" alt="Fish"> 
         </div>
       </section>
 
 
       <!-- Delivery  -->
-      <section class="full-screen delivery">
+      <section class="section full-screen delivery">
         <div class="left">
             <div>
                 Bring us Today, our Dailykit 
@@ -135,30 +148,57 @@
                 </div>
             </div>
         </div>
-        <div class="right">
-            <img class="" src="img/meal-kit.png" alt="Meal Kit">
+        <div id="delivery-right" class="right">
+            <img id="filled-bag" src="img/anims/bag.png" alt="Bag">
+            <img id="scooter" src="img/anims/scooter.png" alt="Meal Kit">
         </div>
       </section>
 
       <!-- Horizontal Section -->
-      <section class="full-screen horizontal">
+      <section class="section full-screen horizontal" id="horizontal">
         <div class="content">
-            <div>
+            <div id="content-text1">
                 Meal kit are here to stay
             </div>
-            <div>
-                While, other meal kit companies pose a threat to your business, Dailykit turns it into an OPPORTUNITY.
+            <div id="content-text2">
+                While, other meal kit companies pose a threat to your business.
             </div>
-            <div class="focus">
+            <div id="content-text3">
+                Dailykit turns it into an OPPORTUNITY.
+            </div>
+            <!-- <div class="focus">
                 <div>
                     With Dailykit Platform, It's super-simple to start your own Meal Kit Brand
                 </div>
+            </div> -->
+        </div>
+      </section>
+
+      <!-- Explore -->
+      <section class="section full-screen explore">
+        <div class="left">
+            What we do?
+            <div>
+                DailyKit is a Meal Kit
+            </div>
+            <div>
+                Technology Platform
+            </div>
+            Our software suite - recipe management, manufacturing solution, sales and marketing platforms and delivery integrations,
+            <span>
+                are everything that your company needs to grow.
+            </span>
+
+        </div>
+        <div class="right">
+            <div class="blob">
+                explore more
             </div>
         </div>
       </section>
 
       <!-- Helping -->
-      <section class="full-screen helping">
+      <section class="section full-screen helping">
         <div class="heading"> 
             Who are we helping
         </div>
@@ -274,6 +314,21 @@
       </section>
 
       <!-- Space -->
-      <section class="full-screen"></section>
+      <section class="section full-screen"></section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" integrity="sha256-XBVALc3QsDSQiDtiaBwNZ2rxCJTHzlUhhlDQ84J8bw8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" integrity="sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js" integrity="sha256-VV47uJSoHZUeiBcCs3FcBOQLMn++yeG/zqZvaUkvGZM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js" integrity="sha256-nuhNsfXzBFR6G1lKP8bK77dakkQDqdHcQ4OCFZvk6Qo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js" integrity="sha256-LBjlnpPrM6Aig8LDFc9PJctPHLGUc6RaUvnmXE4hV5Y=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/BezierPlugin.min.js" integrity="sha256-5jxCMRC1PYU02qJn+fj+DPuxcQZCh0DR8GRwi4iKoRc=" crossorigin="anonymous"></script>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
