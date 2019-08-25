@@ -8,11 +8,12 @@
 
 body, html {
     height: 100%;
+    /* overflow-x: hidden; */
 }
 
 .full-screen {
     min-height: 100vh;
-    padding: 100px 60px;
+    padding: 120px 60px;
 }
 
 .btn-theme {
@@ -72,7 +73,7 @@ body, html {
 .navbar {
     padding: 24px 55px 16px 0px;
     background: #fff;
-    box-shadow: 0 0 10px 2px #ccc;          
+    /* box-shadow: 0 0 10px 2px #ccc;           */
 }
 
 .navbar .navbar-brand {
@@ -244,7 +245,7 @@ body, html {
 }
 
 .meal-kit .left {
-    padding: 50px;
+    padding: 50px 65px;
     font-size: 1.2rem;
     color: #32325D;
     width: 50%;
@@ -423,6 +424,7 @@ body, html {
 .delivery {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .delivery .left {
@@ -472,6 +474,7 @@ body, html {
     width: 50%;
     padding: 80px;
     position: relative;
+    text-align: center;
 }
 
 .delivery .right img {
@@ -481,30 +484,34 @@ body, html {
 
 .delivery .right #filled-bag {
     position: absolute;
-    left: 40%;
+    left: 50%;
     transform: translateX(-50%); 
+}
+
+.delivery .right #scooter {
+    position: absolute;
 }
 
 .delivery img#scooter {
     /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 0.5s; 
+    animation: shake 1s; 
   
     /* When the animation is finished, start again */
     animation-iteration-count: infinite; 
-  }
+}
   
-  @keyframes shake {
+@keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
+    10% { transform: translate(-1px, -1px) rotate(-1deg); }
+    20% { transform: translate(-1px, 0px) rotate(1deg); }
+    30% { transform: translate(1px, 1px) rotate(0deg); }
     40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    50% { transform: translate(-1px, 1px) rotate(-1deg); }
+    60% { transform: translate(-1px, 1px) rotate(0deg); }
+    70% { transform: translate(1px, 1px) rotate(-1deg); }
     80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    90% { transform: translate(1px, 1px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(-1deg); }
 }
 
 @media only screen and (max-width: 768px) {
@@ -551,10 +558,12 @@ body, html {
 /* Horizontal Section */
 
 .horizontal {
-    background: url('../img/anims/kitchen.png') no-repeat center;
+    background: url('../img/anims/kitchen-0.png') no-repeat center;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .horizontal .content {
@@ -586,6 +595,12 @@ body, html {
 
 .horizontal .content #content-text1, .horizontal .content #content-text2, .horizontal .content #content-text3 {
     position: absolute;
+
+}
+
+.horizontal #filled-bag-slide {
+    position: absolute;
+    top: 320px;
 }
 
 .horizontal .content .focus {
@@ -633,6 +648,60 @@ body, html {
 .explore .left span{
     display: block;
     line-height: 4rem;
+}
+
+.explore .right{
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.explore .right .blob {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore .right .blob #explore-dots {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    animation: rotate 20s infinite;
+}
+
+.explore .right .blob #explore-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.explore .right .blob #explore-green {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.explore .right .blob #explore-yellow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    from{ transform: rotate(0deg)}
+    to { transform:  rotate(360deg)}
 }
 
 /* Helping */
@@ -850,3 +919,207 @@ body, html {
     }
 }
 
+/* Do more */
+
+.more .screen{
+    position: relative;
+}
+
+.more .heading {
+    text-align: center;
+    color: #32325D;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.more .text {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    color: #32325D;
+    font-size: 1.2rem;
+}
+
+.more .kit-card {
+    position: absolute;
+    width: 50%;
+    display: flex;
+    direction: row;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    box-shadow: 0 0 5px 1px #aaa;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #32325D;
+    max-height: 400px;
+}
+
+.more .kit-card .left, .more .kit-card .right {
+    width: 50%;
+} 
+
+.more .kit-card img {
+    width: 100%;
+    height: auto;
+}
+
+.more .card-1 .left {
+    display: grid;
+    grid-template-areas: 'top top'
+                            'bottom-left bottom-right';
+    grid-gap: 10px;
+    padding: 20px;
+}   
+
+.more .card-1 .img-area {
+    max-width: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.more .card-1 .img-area img {
+    width: 100%;
+    height: auto;
+}
+
+.more .card-1 .left .img-area:nth-child(1) {
+    grid-area: top; 
+    max-width: 400px;
+}
+
+.more .card-1 .left .bottom:nth-child(2) {
+    grid-area: bottom-left; 
+}
+
+.more .card-1 .left .bottom:nth-child(3) {
+    grid-area: bottom-right; 
+}
+
+.more .kit-card .img-area .daily-badge {
+    position: absolute;
+    color: #fff;
+    background: #8AC03B;
+    border-radius: 15px;
+    padding: 5px;
+    top: 5px;
+    left: 5px;
+    font-size: 0.8rem;
+}
+
+.more .card-1 .right {
+    padding: 20px 50px;  
+}
+
+.more .card-1 .right div:nth-child(1) {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.more .card-1 .right div:nth-child(2) {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.more .card-1 .right div:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+.more .card-1 .right .btn-theme {
+    border: none;
+    padding: 10px 30px;
+}
+
+.more .card-2 .left {
+    padding: 20px 50px;  
+}
+
+.more .card-2 .left div:nth-child(1){
+    font-size: 1.7rem;
+}
+
+.more .card-2 .left div:nth-child(2) {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.more .card-2 .left div:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+.more .card-2 .left .btn-theme {
+    border: none;
+    padding: 10px 30px;
+}
+
+.more .card-3 .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.more .card-3 .right {
+    padding: 20px 50px;  
+}
+
+.more .card-3 .right div:nth-child(1) {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.more .card-3 .right div:nth-child(2) {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.more .card-3 .right div:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+.more .card-3 .right .btn-theme {
+    border: none;
+    padding: 10px 30px;
+}
+
+.more .card-4 .left {
+    padding: 20px 50px;  
+}
+
+.more .card-4 .left div:nth-child(1){
+    font-size: 1.7rem;
+}
+
+.more .card-4 .left div:nth-child(2) {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.more .card-4 .left div:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+.more .card-4 .left .btn-theme {
+    border: none;
+    padding: 10px 30px;
+}
+
+.more .card-2,.more .card-3,.more .card-4 {
+    opacity: 0;
+}
+
+.cost {
+    background: #1D2B44;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cost .text {
+    font-weight: 700;
+    font-size: 4rem;
+}

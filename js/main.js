@@ -137,73 +137,120 @@ const timeline1 = new TimelineLite();
 timeline1.to('#meat', 1, {
   bezier : flightPathMeat,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#fish', 1, {
   bezier : flightPathFish,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#carrot-1', 1, {
   bezier : flightPathCarrot1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#tomato-1', 1, {
   bezier : flightPathTomato1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#tomato-2', 1, {
   bezier : flightPathTomato2,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#mush-1', 1, {
   bezier : flightPathMush1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#mush-2', 1, {
   bezier : flightPathMush2,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#mush-3', 1, {
   bezier : flightPathMush3,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#bottle-1', 1, {
   bezier : flightPathBottle1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#bottle-2', 1, {
   bezier : flightPathBottle2,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#bro-1', 1, {
   bezier : flightPathBro1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#bro-2', 1, {
   bezier : flightPathBro2,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#chilli-1', 1, {
   bezier : flightPathChilli1,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
 .to('#chilli-2', 1, {
   bezier : flightPathChilli2,
   ease : Power1.easeInOut,
-  opacity: 0
 }, 'veg')
+.to('#meat', 0, {
+  opacity : 0
+}, 'vanish')
+.to('#fish', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#carrot-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#tomato-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#tomato-2', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#mush-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#mush-2', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#mush-3', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#bottle-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#bottle-2', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#bro-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#bro-2', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#chilli-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#chilli-2', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#bag', 2, {
+  top : 700,
+})
+.to('#bag', 0, {
+  opacity: 0
+})
 
 
 const controller1 = new ScrollMagic.Controller();
@@ -223,14 +270,30 @@ const scene1 = new ScrollMagic.Scene({
 
 const timeline2 = new TimelineLite();
 
+// Code for what you're going to ask
+
 timeline2.from('#filled-bag', 1, {
   top : -200,
   opacity: 0
 })
 .to('#filled-bag', 1, {
-  top : 200,
+  top : 95,
   opacity: 1
 })
+.to('#filled-bag', 0.3, {
+  top : 300,
+  left : 600,
+  opacity : 0
+}, 'last')
+.from('#scooter', 0, {
+  top : 0,
+  left : 250,
+})
+.to('#scooter', 0.7, {
+  top : 300,
+  left : 800,
+  opacity : 0
+}, 'last');
 
 const controller2 = new ScrollMagic.Controller();
 
@@ -249,8 +312,28 @@ const scene2 = new ScrollMagic.Scene({
 
 const timeline3 = new TimelineLite();
 
-timeline3.to('#content-text1', 1, {
-  top : -1,
+timeline3
+.from('#filled-bag-slide', 1, {
+  right : -200
+})
+.to('#filled-bag-slide', 3, {
+  right : 424,
+},)
+.from('#content-text1', 1, {
+  top: 100,
+  opacity: 0
+})
+.to('#content-text1', 1, {
+  opacity: 1
+})
+.to('#horizontal', 0, {
+  backgroundImage : 'url(img/anims/kitchen-2.png)'
+}, 'gayab')
+.to('#filled-bag-slide', 0, {
+  opacity: 0
+}, 'gayab')
+.to('#content-text1', 1, {
+  top : -100,
   opacity: 0
 })
 .from('#content-text2', 1, {
@@ -285,3 +368,59 @@ const scene3 = new ScrollMagic.Scene({
   // .addIndicators()z
   .setPin('.horizontal')
   .addTo(controller3);
+
+
+// Animation for fifth fold
+
+const timeline4 = new TimelineLite();
+
+timeline4
+.to('.card-1', 0.2, {
+  top : 20,
+  opacity: 0
+})
+.from('.card-2', 0.2, {
+  top : 40,
+  opacity: 0
+})
+.to('.card-2', 0.2, {
+  top : 20,
+  opacity: 1
+})
+.to('.card-2', 0.2, {
+  top : 20,
+  opacity: 0
+})
+.from('.card-3', 0.2, {
+  top : 40,
+  opacity: 0
+})
+.to('.card-3', 0.2, {
+  top : 20,
+  opacity: 1
+})
+.to('.card-3', 0.2, {
+  top : 20,
+  opacity: 0
+})
+.from('.card-4', 0.2, {
+  top : 40,
+  opacity: 0
+})
+.to('.card-4', 0.2, {
+  top : 20,
+  opacity: 1
+})
+
+
+const controller4 = new ScrollMagic.Controller();
+
+const scene4 = new ScrollMagic.Scene({
+  triggerElement: '.more',
+  duration: 500,
+  triggerHook: 0
+})
+  .setTween(timeline4)
+  // .addIndicators()z
+  .setPin('.more')
+  .addTo(controller4);
