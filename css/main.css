@@ -626,7 +626,9 @@ body, html {
 .explore {
     background: #1D2B44;
     display: flex;
+    position: relative;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .explore .left {
@@ -665,11 +667,16 @@ body, html {
     align-items: center;
 }
 
+.explore .right .blob:hover {
+    cursor: pointer;
+}
+
+.explore .right .blob:hover .explore-yellow {
+    animation: rotate 20s infinite;
+}
+
+
 .explore .right .blob #explore-dots {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     animation: rotate 20s infinite;
 }
 
@@ -697,6 +704,16 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 2500px;
+    background: #1D2B44;
+    transition: 1s ease;
+    z-index: 2;
 }
 
 @keyframes rotate {
@@ -1111,15 +1128,152 @@ body, html {
     opacity: 0;
 }
 
+/* Cost  */
+
 .cost {
     background: #1D2B44;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .cost .text {
     font-weight: 700;
     font-size: 4rem;
+}
+
+.cost .side-screen{
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    color: #8AC03B;
+
+}
+
+.cost .side-screen .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cost .side-screen .main div {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.cost .side-screen .helper {
+    color: #111;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.cost .side-screen .helper .left{
+    width: 50%;
+    color: #1D2B44;
+}
+
+.cost .side-screen .helper .left div:nth-child(1) {
+    font-size: 3rem;
+}
+
+.cost .side-screen .helper .left div:nth-child(2) {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.cost .side-screen .helper .left div:nth-child(3) {
+    color: #629520;
+    font-size: 1.2rem;
+}
+
+
+.cost .side-screen .helper .left .btn-theme {
+    border:none;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+.cost .side-screen .helper .left .btn-theme .dot {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    margin-right: 10px; 
+}
+
+/* VC */
+
+.vc {
+    position: relative;
+}
+
+.vc .vc-main {
+    height: 500px;
+    background: url('../img/chef.jpg') no-repeat top;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* position: absolute; */
+}
+
+.vc .vc-main .content {
+    position: absolute;
+    left: 50%;
+    padding: 100px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.vc .vc-main .content div:nth-child(2) {
+    font-weight: bold;
+}
+
+.vc .vc-main .content button {
+    font-size: 1rem;
+}
+
+.vc .vc-main .content button:nth-child(1) {
+    color: #1D2B44;
+    background: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.vc .vc-main .content button:nth-child(2) {
+    color: #fff;
+    background: #1D2B44;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+
+/* Form */
+.form {
+    background: #1D2B44;
+    position: relative;
+}
+
+.form .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 700%;
+    font-size: 3rem;
 }

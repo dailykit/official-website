@@ -17,6 +17,15 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
+window.onload = () => {
+  document.getElementById('explore-overlay').style.left = screen.width;
+
+  document.getElementById('blob').addEventListener('click', function() {
+    document.getElementById('explore-overlay').style.left = 0;
+  });
+};
+
+
 
 // Animation for first fold
 
@@ -424,3 +433,40 @@ const scene4 = new ScrollMagic.Scene({
   // .addIndicators()z
   .setPin('.more')
   .addTo(controller4);
+
+
+// Animation for sixth fold
+
+const timeline5 = new TimelineLite();
+
+timeline5
+.from('.side-screen', 1, {
+  left : screen.width,
+})
+.to('.side-screen', 1, {
+  left : 0
+})
+.to('.main', 1, {
+  top : 200
+})
+.from('.helper', 1 , {
+  opacity : 0
+})
+.to('.helper', 0.5, {
+  opacity  : 1
+})
+.to('.cost', 0, {
+  background : '#fff'
+})
+
+const controller5 = new ScrollMagic.Controller();
+
+const scene5 = new ScrollMagic.Scene({
+  triggerElement: '.cost',
+  duration: 500,
+  triggerHook: 0
+})
+  .setTween(timeline5)
+  // .addIndicators()z
+  .setPin('.cost')
+  .addTo(controller5);
