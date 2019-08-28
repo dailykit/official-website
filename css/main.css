@@ -73,7 +73,7 @@ body, html {
 .navbar {
     padding: 24px 55px 16px 0px;
     background: #fff;
-    /* box-shadow: 0 0 10px 2px #ccc;           */
+    box-shadow: 0 0 5px 2px #666;          
 }
 
 .navbar .navbar-brand {
@@ -332,6 +332,13 @@ body, html {
     transform: translateX(-50%);
 }
 
+.meal-kit .right #carrot-2 {
+    position: absolute;
+    top: 1%;
+    left: 42%;
+    transform: translateX(-50%);
+}
+
 .meal-kit .right #chilli-1 {
     position: absolute;
     top: 20%;
@@ -385,6 +392,13 @@ body, html {
     position: absolute;
     top: 49%;
     left: 55%;
+    transform: translateX(-50%);
+}
+
+.meal-kit .right #leaves {
+    position: absolute;
+    top: 34%;
+    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -706,7 +720,7 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-.overlay {
+.explore .overlay {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -714,6 +728,36 @@ body, html {
     background: #1D2B44;
     transition: 1s ease;
     z-index: 2;
+}
+
+.explore .overlay .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.explore .overlay .content img {
+    width: 100%;
+    height: auto;
+}
+
+.explore .overlay .content h3 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.explore .overlay .content .btn-theme {
+    background: #6C8B3E;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 20px 0;
 }
 
 @keyframes rotate {
@@ -994,6 +1038,7 @@ body, html {
     max-width: 200px;
     overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 .more .card-1 .img-area img {
@@ -1124,6 +1169,15 @@ body, html {
     padding: 10px 30px;
 }
 
+.more .card-4 .right {
+    position: relative;
+}
+
+.more .card-4 .right img {
+    position: absolute;
+    bottom: 0;
+}
+
 .more .card-2,.more .card-3,.more .card-4 {
     opacity: 0;
 }
@@ -1176,11 +1230,13 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
+    display: flex;
 }
 
 .cost .side-screen .helper .left{
     width: 50%;
     color: #1D2B44;
+    padding: 75px 0;
 }
 
 .cost .side-screen .helper .left div:nth-child(1) {
@@ -1211,6 +1267,12 @@ body, html {
     margin-right: 10px; 
 }
 
+.cost .side-screen .helper .right {
+    float: left;
+    width: 50%; 
+    text-align: center;
+}
+
 /* VC */
 
 .vc {
@@ -1219,7 +1281,7 @@ body, html {
 
 .vc .vc-main {
     height: 500px;
-    background: url('../img/chef.jpg') no-repeat top;
+    background: url('../img/chef.png') no-repeat top;
     background-size: cover;
     position: relative;
     border-radius: 20px;
@@ -1268,7 +1330,7 @@ body, html {
     position: relative;
 }
 
-.form .text {
+.form .form-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1276,4 +1338,27 @@ body, html {
     color: #fff;
     font-weight: 700%;
     font-size: 3rem;
+    text-align: center;
+}
+
+.form .form-helper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F9C80A;
+    text-align: center;
+    width: 60%;
+    opacity: 0; 
+}
+
+.form .kit-form {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    height: 600px;
+    width: 70%;
+    opacity: 0;
 }

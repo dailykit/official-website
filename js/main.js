@@ -53,6 +53,15 @@ const flightPathCarrot1 = {
   ]
 }
 
+
+const flightPathCarrot2 = {
+  curviness : 1.25,
+  autoRotate : false,
+  values : [
+    {x: 35, y: 220},
+  ]
+}
+
 const flightPathTomato1 = {
   curviness : 1.25,
   autoRotate : false,
@@ -141,6 +150,14 @@ const flightPathChilli2 = {
   ]
 }
 
+const flightPathLeaves = {
+  curviness : 1.25,
+  autoRotate : false,
+  values : [
+    {x: -25, y: 75},
+  ]
+}
+
 const timeline1 = new TimelineLite();
 
 timeline1.to('#meat', 1, {
@@ -153,6 +170,10 @@ timeline1.to('#meat', 1, {
 }, 'veg')
 .to('#carrot-1', 1, {
   bezier : flightPathCarrot1,
+  ease : Power1.easeInOut,
+}, 'veg')
+.to('#carrot-2', 1, {
+  bezier : flightPathCarrot2,
   ease : Power1.easeInOut,
 }, 'veg')
 .to('#tomato-1', 1, {
@@ -199,6 +220,10 @@ timeline1.to('#meat', 1, {
   bezier : flightPathChilli2,
   ease : Power1.easeInOut,
 }, 'veg')
+.to('#leaves', 1, {
+  bezier : flightPathLeaves,
+  ease : Power1.easeInOut,
+}, 'veg')
 .to('#meat', 0, {
   opacity : 0
 }, 'vanish')
@@ -207,6 +232,10 @@ timeline1.to('#meat', 1, {
 
 }, 'vanish')
 .to('#carrot-1', 0, {
+  opacity : 0
+
+}, 'vanish')
+.to('#carrot-2', 0, {
   opacity : 0
 
 }, 'vanish')
@@ -254,6 +283,10 @@ timeline1.to('#meat', 1, {
   opacity : 0
 
 }, 'vanish')
+.to('#leaves', 0, {
+  opacity : 0
+  
+}, 'vanish')
 .to('#bag', 2, {
   top : 700,
 })
@@ -290,7 +323,7 @@ timeline2.from('#filled-bag', 1, {
   opacity: 1
 })
 .to('#filled-bag', 0.3, {
-  top : 300,
+  top : 250,
   left : 600,
   opacity : 0
 }, 'last')
@@ -470,3 +503,31 @@ const scene5 = new ScrollMagic.Scene({
   // .addIndicators()z
   .setPin('.cost')
   .addTo(controller5);
+
+
+  // Animation for seventh fold
+
+const timeline6 = new TimelineLite();
+
+timeline6
+.to('.form-text', 1, {
+  top : '30%',
+}, 'label')
+.to('.form-helper', 1, {
+  opacity : 1
+}, 'label')
+.to('.kit-form', 0.2, {
+  opacity : 1
+})
+
+const controller6 = new ScrollMagic.Controller();
+
+const scene6 = new ScrollMagic.Scene({
+  triggerElement: '.form',
+  duration: 500,
+  triggerHook: 0
+})
+  .setTween(timeline6)
+  // .addIndicators()z
+  .setPin('.form')
+  .addTo(controller6);
