@@ -37,6 +37,10 @@ body, html {
     display: block;
 }
 
+#fullpage {
+    position: relative;
+}
+
 @media only screen and (max-width: 768px) {
     .show-on-mobile-only {
         display: block;
@@ -1361,4 +1365,17 @@ body, html {
     height: 600px;
     width: 70%;
     opacity: 0;
+    box-shadow: 0 0 5px 1px #aaa;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+footer {
+    position: absolute;
+    background: #1D2B44;
+    bottom: 0;
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
 }

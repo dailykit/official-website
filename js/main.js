@@ -17,6 +17,17 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
+// $(document).ready(function() {
+// 	$('#fullpage').fullpage({
+// 		//options here
+// 		autoScrolling:true,
+// 		scrollHorizontally: true
+// 	});
+
+// 	//methods
+// 	$.fn.fullpage.setAllowScrolling(false);
+// });
+
 window.onload = () => {
   document.getElementById('explore-overlay').style.left = screen.width;
 
