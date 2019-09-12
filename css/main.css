@@ -1,3 +1,26 @@
+/* Fallback for iPad and Mobile */
+.hide-please {
+    display: block;
+}
+.show-please {
+    display: none;
+}
+.fallback-banner {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #32325D;
+    font-weight: 900;
+}
+@media only screen and (max-width: 1000px) {
+    .hide-please {
+        display: none;
+    }
+    .show-please {
+        display: flex;
+    }
+}
+
 /* Base Styles */
 
 * {
