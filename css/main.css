@@ -95,6 +95,30 @@ body, html {
     background: #22802B; 
 }
 
+/* Preloader */
+.preloader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+    overflow-y: hidden; 
+}
+
+.preloader img {
+    transform: scale(1.1);
+}
+
+/* Navbar Issue Fix */
+.fixed-top {
+    z-index: 50;
+}
+
 /* Navbar */
 
 .navbar {
@@ -567,7 +591,7 @@ body, html {
     }
 
     .delivery .left {
-        order: 1;
+        /* order: 1; */
     }
 
     .delivery .left > div:nth-child(1) {
@@ -585,7 +609,7 @@ body, html {
 
     .delivery .right {
         margin-bottom: 50px;
-        order: 0;
+        /* order: 0; */
     }
 
     .delivery .left .points .panel {
@@ -636,7 +660,6 @@ body, html {
 
 .horizontal .content #content-text1, .horizontal .content #content-text2, .horizontal .content #content-text3 {
     position: absolute;
-
 }
 
 .horizontal #filled-bag-slide {
@@ -1332,16 +1355,16 @@ body, html {
     font-size: 1rem;
 }
 
-.vc .vc-main .content button:nth-child(1) {
+/* .vc .vc-main .content button:nth-child(1) {
     color: #1D2B44;
     background: #fff;
     border: none;
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px 20px;
-}
+} */
 
-.vc .vc-main .content button:nth-child(2) {
+.vc .vc-main .content button {
     color: #fff;
     background: #1D2B44;
     border: none;

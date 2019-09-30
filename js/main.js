@@ -1,3 +1,9 @@
+window.addEventListener('load', function() {
+  document.getElementById('preloader').style.display = 'none';
+  console.log('All assets are loaded')
+})
+
+
 let acc = document.getElementsByClassName("accordion");
 
 for (let i = 0; i < acc.length; i++) {
@@ -6,13 +12,19 @@ for (let i = 0; i < acc.length; i++) {
     let panel = this.nextElementSibling;
     if (panel.style.maxHeight){
         panel.style.maxHeight = null;
+        this.children[0].classList.toggle('fa-minus-circle');
+        this.children[0].classList.toggle('fa-plus-circle');
     } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
+        this.children[0].classList.toggle('fa-minus-circle');
+        this.children[0].classList.toggle('fa-plus-circle');
     } 
     let panels = document.getElementsByClassName("panel");
     for (let j = 0; j < panels.length; j++) {
         if (i === j) continue;
         panels[j].style.maxHeight = null;
+        panels[j].previousElementSibling.children[0].classList.remove('fa-minus-circle');
+        panels[j].previousElementSibling.children[0].classList.add('fa-plus-circle');
     }
   });
 }
@@ -28,15 +40,15 @@ for (let i = 0; i < acc.length; i++) {
 // 	$.fn.fullpage.setAllowScrolling(false);
 // });
 
-window.onload = () => {
-  document.getElementById('explore-overlay').style.left = screen.width;
+if (window.screen.width > 420) {
 
-  document.getElementById('blob').addEventListener('click', function() {
-    document.getElementById('explore-overlay').style.left = 0;
-  });
-};
-
-
+  window.onload = () => {
+    document.getElementById('explore-overlay').style.left = screen.width;
+  
+    document.getElementById('blob').addEventListener('click', function() {
+      document.getElementById('explore-overlay').style.left = 0;
+    });
+  };
 
 // Animation for first fold
 
@@ -542,3 +554,20 @@ const scene6 = new ScrollMagic.Scene({
   // .addIndicators()z
   .setPin('.form')
   .addTo(controller6);
+
+} else {
+  window.onload = () => {
+    document.getElementById('explore-overlay-sm').style.left = screen.width;
+  
+    document.getElementById('blob').addEventListener('click', function() {
+      document.getElementById('explore-overlay-sm').style.left = 0;
+      document.getElementById('explore-overlay-sm').style.opacity = 1;      
+    });
+
+    document.getElementById('explore-overlay-close').addEventListener('click', () => {
+      document.getElementById('explore-overlay-sm').style.left = '500px';
+      document.getElementById('explore-overlay-sm').style.opacity = 0;      
+  
+    })
+  };
+}
