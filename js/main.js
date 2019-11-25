@@ -1,6 +1,36 @@
 window.addEventListener('load', function() {
   document.getElementById('preloader').style.display = 'none';
   console.log('All assets are loaded')
+
+  document.getElementById('explore-overlay').style.left = screen.width;
+
+  document.getElementById('blob').addEventListener('click', function() {
+    document.getElementById('explore-overlay').style.left = 0;
+  });
+
+  let slides = document.getElementsByClassName('slide');
+  let currentSlide = 0;
+  
+  slides[0].style.display = 'flex';
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length; 
+    showSlide(currentSlide);
+  })
+
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentSlide = (currentSlide + slides.length - 1) % slides.length; 
+    showSlide(currentSlide);
+  })
+
+  function showSlide(index) {
+    for(let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    slides[index].style.display = 'flex';
+  }
+
 })
 
 
@@ -41,14 +71,6 @@ for (let i = 0; i < acc.length; i++) {
 // });
 
 if (window.screen.width > 420) {
-
-  window.onload = () => {
-    document.getElementById('explore-overlay').style.left = screen.width;
-  
-    document.getElementById('blob').addEventListener('click', function() {
-      document.getElementById('explore-overlay').style.left = 0;
-    });
-  };
 
 // Animation for first fold
 
@@ -450,7 +472,8 @@ timeline4
 })
 .to('.card-2', 0.2, {
   top : 20,
-  opacity: 1
+  opacity: 1,
+  display : 'flex'
 })
 .to('.card-2', 0.2, {
   top : 20,
@@ -462,7 +485,8 @@ timeline4
 })
 .to('.card-3', 0.2, {
   top : 20,
-  opacity: 1
+  opacity: 1,
+  display : 'flex'
 })
 .to('.card-3', 0.2, {
   top : 20,
@@ -474,7 +498,8 @@ timeline4
 })
 .to('.card-4', 0.2, {
   top : 20,
-  opacity: 1
+  opacity: 1,
+  display : 'flex'
 })
 
 
@@ -551,23 +576,20 @@ const scene6 = new ScrollMagic.Scene({
   triggerHook: 0
 })
   .setTween(timeline6)
-  // .addIndicators()z
+  // .addIndicators()
   .setPin('.form')
   .addTo(controller6);
 
 } else {
-  window.onload = () => {
-    document.getElementById('explore-overlay-sm').style.left = screen.width;
-  
-    document.getElementById('blob').addEventListener('click', function() {
-      document.getElementById('explore-overlay-sm').style.left = 0;
-      document.getElementById('explore-overlay-sm').style.opacity = 1;      
-    });
+  document.getElementById('explore-overlay-sm').style.left = screen.width;
 
-    document.getElementById('explore-overlay-close').addEventListener('click', () => {
-      document.getElementById('explore-overlay-sm').style.left = '500px';
-      document.getElementById('explore-overlay-sm').style.opacity = 0;      
-  
-    })
-  };
+  document.getElementById('blob').addEventListener('click', function() {
+    document.getElementById('explore-overlay-sm').style.left = 0;
+    document.getElementById('explore-overlay-sm').style.opacity = 1;
+  });
+
+  document.getElementById('explore-overlay-close').addEventListener('click', function() {
+    document.getElementById('explore-overlay-sm').style.left = '600px';
+    document.getElementById('explore-overlay-sm').style.opacity = 0;
+  });
 }
