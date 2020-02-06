@@ -27,10 +27,22 @@ section {
     background: #22802B; 
 }
 
+.btn-theme {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    background: #8AC03B;
+    padding: 13px 39px;
+    border: none;
+    cursor: pointer;
+}
+
 /* Fold 1 */
 .fold-1 {
     display: flex;
     color: #1d2b44;
+    padding: 120px 0;
 }
 
 .fold-1 .left {
@@ -98,7 +110,7 @@ section {
 
 .fold-1 .right video{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -111,4 +123,39 @@ section {
     z-index: 1;
     background: #1d2b44;
     opacity: 0.7;
+}
+
+/* Fold 3 */
+.fold-3 {
+    display: flex;
+    padding: 120px 0;
+    color: #1d2b44;
+} 
+
+.fold-3 .left {
+    flex: 1;
+}
+
+.fold-3 .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fold-3 .right .fold-title {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 35px;
+}
+
+.fold-3 .right .fold-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 52px;
+}
+
+.fold-3 .btn-theme {
+    max-width: 323px;
 }
