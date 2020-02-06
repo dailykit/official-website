@@ -193,3 +193,47 @@ section {
     font-weight: 500;
     line-height: 1.67;
 }
+
+/* Fold 6 */
+.fold-6 {
+    padding: 120px;
+    color: #1d2b44;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fold-6 .fold-title {
+    font-size: 48px;
+    line-height: 1.19;
+    margin-bottom: 108px;
+    text-align: center  ;
+}
+
+.fold-6 .testimonial-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.fold-6 .testimonial-row .testimonial {
+    border: 1px solid #8ac03b;
+    position: relative;
+}
+
+.fold-6 .testimonial-row .testimonial .text {
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+    padding: 28px;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.fold-6 .testimonial-row .testimonial .text .author {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin-top: 10px;
+}
