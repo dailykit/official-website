@@ -7,8 +7,14 @@
     font-family: 'Chivo', sans-serif;
 }
 
+body {
+    scroll-snap-type: mandatory;
+    overflow-y: scroll;
+}
+
 section {
     min-height: 100vh;
+    scroll-snap-align: start;
 }
 
 ::-webkit-scrollbar {
@@ -158,4 +164,32 @@ section {
 
 .fold-3 .btn-theme {
     max-width: 323px;
+}
+
+/* Fold 5 */
+.fold-5 {
+    padding: 120px;
+    position: relative;
+    color: #1d2b44;
+}
+
+.fold-5 .fold-title {
+    font-size: 58px;
+    font-weight: bold;
+    line-height: 0.79;
+    color: #8ac03b;
+    margin-bottom: 28px;
+}
+
+.fold-5 .fold-title-helper {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.64;
+    margin-bottom: 168px;
+}
+
+.fold-5 .fold-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.67;
 }
