@@ -323,3 +323,58 @@ section {
     width: 100%;
     height: auto;
 }
+
+/* Fold 9 */
+.fold-9 {
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    color: #1d2b44;
+}
+
+.fold-9 .fold-title {
+    font-size: 48px;
+    line-height: 1.19;
+    margin-bottom: 49px;
+}
+
+.fold-9 .tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 25px;
+}
+
+.fold-9 .tabs span {
+    padding: 12.5px 0;
+    cursor: pointer;
+}
+
+.fold-9 .tabs span.active {
+    font-weight: 500;
+    color: #8ac03b; 
+    border-bottom: 2px solid #8ac03b;
+}
+
+.fold-9 .questions-box {
+    display: none;
+}
+
+.fold-9 .questions-box.active {
+    display: block;
+}
+
+.fold-9 .questions-box .question {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.21;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.fold-9 .questions-box .question .answer {
+    margin-top: 16px;
+    font-weight: normal;
+    transition: 2s ease;
+    display: none;
+}
