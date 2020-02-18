@@ -141,9 +141,16 @@ section {
 
 .fold-3 .left {
     flex: 1;
+    display: flex;
+}
+
+.fold-3 .left img {
+    width: 100%;
+    height: auto;
 }
 
 .fold-3 .right {
+    padding: 50px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -159,13 +166,70 @@ section {
 .fold-3 .right .fold-text {
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 2.5;
     margin-bottom: 52px;
 }
 
 .fold-3 .btn-theme {
     max-width: 323px;
 }
+
+/* Fold 4 */
+.fold-4 {
+
+}
+
+.fold-4 .fold-title {
+    padding: 120px;
+    font-weight: bold;
+    color: #8ac03b;
+    font-size: 56px;
+    line-height: 70px;
+}
+
+.fold-4 .fold-title > div {
+    font-size: 40px;
+    color:  #1d2b44;
+}
+
+.fold-4 .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px;
+    padding-right: 56px;
+}
+
+.fold-4 .left .fold-text {
+    margin-top: 28px;
+}
+
+.fold-4 .left .fold-pills {
+    margin-top: 18px;
+    margin-bottom: 28px;
+}
+
+.fold-4 .left .fold-pills span {
+    margin-right: 24px;
+    position: relative;
+}
+
+.fold-4 .left .fold-pills span:not(:last-child)::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #1d2b44;
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-40%);
+    border-radius: 100%;
+}
+
+.fold-4 button {
+    width: 240px;
+}
+
 
 /* Fold 5 */
 .fold-5 {
@@ -252,6 +316,7 @@ section {
     position: relative;
     cursor: pointer;
     transition: 0.5s ease;
+    overflow: hidden;
 }
 
 .fold-7 .tile img {
@@ -266,7 +331,28 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
+    text-align: center;
 }
+
+.fold-7 .tile .overlay .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-size: 40px;
+    transition: .5s ease;
+}
+
+.fold-7 .tile .overlay .text {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.fold-7 .tile .overlay button, .fold-7 .tile .overlay .text {
+    opacity: 0;
+    transition: .5s ease;
+} 
 
 .fold-7 .tile:nth-child(1) .overlay {
     background: rgba(14,62,15, 0.6);
@@ -282,6 +368,14 @@ section {
 
 .fold-7 .tile:hover {
     flex: 3;
+}
+
+.fold-7 .tile:hover .overlay .title{
+    height: 40%;
+}
+
+.fold-7 .tile:hover .overlay button, .fold-7 .tile:hover .overlay .text{
+    opacity: 1;
 }
 
 /* Fold 8 */
