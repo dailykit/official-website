@@ -45,6 +45,12 @@ section {
     cursor: pointer;
 }
 
+.btn-theme-alt {
+    color: #8AC03B;
+    background: #fff;
+    border: 1px solid #8AC03B;
+}
+
 /* Fold 1 */
 .fold-1 {
     display: flex;
@@ -192,8 +198,14 @@ section {
     color:  #1d2b44;
 }
 
+.fold-4 .flexer {
+    display: flex;
+    margin-bottom: 120px;
+}
+
 .fold-4 .left {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     padding: 120px;
@@ -230,6 +242,14 @@ section {
     width: 240px;
 }
 
+.fold-4 .right {
+    flex: 1;
+}
+
+.fold-4 .right img {
+    width: 100%;
+    height: auto;
+}
 
 /* Fold 5 */
 .fold-5 {
@@ -257,6 +277,14 @@ section {
     font-size: 18px;
     font-weight: 500;
     line-height: 1.67;
+}
+
+.fold-5 img {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 /* Fold 6 */
@@ -471,4 +499,8 @@ section {
     font-weight: normal;
     transition: 2s ease;
     display: none;
+}
+
+.fold-9 button {
+    max-width: 254px;
 }
